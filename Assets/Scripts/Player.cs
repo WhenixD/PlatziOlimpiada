@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour {
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour {
 
     public GameObject cameraAux;
 
+
     void Start() {
         controller = GetComponent<Controller2D>();
         gravity = -(2 * jumpHeight) / Mathf.Pow(timeToJumpApex, 2);
@@ -40,6 +42,8 @@ public class Player : MonoBehaviour {
 
         int wallDirX = (controller.collisions.left) ? -1 : 1;
 
+        AnimatePlayer(input, velocity);
+
         float targetVelocityX = input.x * moveSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing,
         (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
@@ -49,6 +53,9 @@ public class Player : MonoBehaviour {
 
             if (jumpRequest) {
                 jumpRequest = false;
+
+                if (!controller.collisions.above) {
+                }
             }
         }
 
@@ -74,6 +81,7 @@ public class Player : MonoBehaviour {
 
         switch (otherTag) {
             case "Collectable":
+                Destroy(other.gameObject);
                 break;
 
             case "Hazard":
@@ -86,10 +94,20 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void AnimatePlayer(Vector2 input, Vector3 velocity) {
+        if (input.x == 0) {
+        } else {
+        }
+
+        if (velocity.x < 0) {
+            sprite.flipX = true;
+        } else if (velocity.x > 0) {
+            sprite.flipX = false;
+        }
+    }
+
     void DestroyPlayer() {
         cameraAux.GetComponent<CameraFollow>().enabled = false;
         Destroy(gameObject);
-        //FindObjectOfType<GameManager>().ResetLevel();
     }
 }
-
