@@ -109,5 +109,6 @@ public class Player : MonoBehaviour {
     void DestroyPlayer() {
         cameraAux.GetComponent<CameraFollow>().enabled = false;
         Destroy(gameObject);
+        FindObjectOfType<GameManager>().ResetLevel();
     }
 }
