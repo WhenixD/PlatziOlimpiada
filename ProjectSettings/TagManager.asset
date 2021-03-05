@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Foreground
+  - Limit
+  - Activate
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - Foreground
   - Player
-  - 
+  - Background
   - 
   - 
   - 
@@ -42,9 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1750147675
+    locked: 0
   - name: Custom Range
     uniqueID: 4064702053
     locked: 0
   - name: Player
     uniqueID: 2583880839
+    locked: 0
+  - name: Foreground
+    uniqueID: 3061152487
     locked: 0

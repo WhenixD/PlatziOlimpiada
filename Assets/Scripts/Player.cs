@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
 
     Controller2D controller;
 
+    private Animator anim;
     private SpriteRenderer sprite;
 
     public GameObject cameraAux;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour {
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpVelocity);
 
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         jumpRequest = false;
     }
@@ -51,16 +53,23 @@ public class Player : MonoBehaviour {
         if (controller.collisions.above || controller.collisions.below) {
             velocity.y = 0;
 
+            anim.SetBool("jumpRequest", false);
+            anim.SetBool("isFalling", false);
+
             if (jumpRequest) {
                 jumpRequest = false;
 
                 if (!controller.collisions.above) {
                 }
             }
+        } else {
+            anim.SetTrigger("hasJumped");
+            anim.SetBool("jumpRequest", true);
         }
 
         if (velocity.y < 0) {
             jumpRequest = true;
+            anim.SetBool("isFalling", true);
         }
 
         if (Input.GetButtonDown("Jump") && (controller.collisions.above || controller.collisions.below)) {
@@ -96,7 +105,9 @@ public class Player : MonoBehaviour {
 
     void AnimatePlayer(Vector2 input, Vector3 velocity) {
         if (input.x == 0) {
+            anim.SetBool("isRunning", false);
         } else {
+            anim.SetBool("isRunning", true);
         }
 
         if (velocity.x < 0) {

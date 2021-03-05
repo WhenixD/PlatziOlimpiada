@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 611385394970147914}
-  - component: {fileID: 611385394970147915}
-  - component: {fileID: 611385394970147916}
-  - component: {fileID: 611385394970147917}
+  - component: {fileID: 1098599300958357962}
+  - component: {fileID: 3381081556074010072}
+  - component: {fileID: 410768033826528764}
   m_Layer: 6
   m_Name: MovingPlatform
   m_TagString: Foreground
@@ -28,12 +28,12 @@ Transform:
   m_GameObject: {fileID: 611385394970147918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.11, y: 0.35, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 1}
+  m_LocalScale: {x: 1.5524123, y: 3.0953465, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &611385394970147915
+--- !u!212 &1098599300958357962
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,21 +70,21 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1711086457
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 50b2afb0f7b891342841aed6d4fe1d3b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3dcaf7a2d60eda64fb8637d3b9dd6131, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &611385394970147916
+--- !u!61 &3381081556074010072
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,16 +101,16 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 0.32}
+    newSize: {x: 2.56, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &611385394970147917
+--- !u!114 &410768033826528764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,8 +135,8 @@ MonoBehaviour:
     m_Bits: 128
   localWaypoints:
   - {x: 0, y: 0, z: 0}
-  - {x: 9, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   speed: 3
   cyclic: 1
-  waitTime: 0.8
+  waitTime: 0.6
   easeAmount: 0.6
